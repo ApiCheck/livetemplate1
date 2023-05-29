@@ -1,0 +1,46 @@
+import { usePubSub } from "@videosdk.live/react-sdk";
+import { useEffect, useRef, useState } from "react";
+
+export const Notification = () => {
+
+  const handleChatMessage = (msg) => {
+    // if (timeoutRef.current) {
+    //   clearTimeout(timeoutRef.current);
+    // }
+    setMessage(msg);
+    // timeoutRef.current = setTimeout(() => {
+    //   setMessage(null);
+    // }, 3200);
+  };
+  const [message, setMessage] = useState(null);
+  const { publish } = usePubSub("VIEWER_MESSAGE", {
+    onMessageReceived: handleChatMessage,
+  });
+  useEffect(() => {
+    return () => {
+      // if (timeoutRef.current) {
+      //   clearTimeout(timeoutRef.current);
+      // }
+    };
+  }, []);
+  return message ? (
+    <div
+      style={{
+        backgroundColor: "#232830",
+        padding: "10px",
+        textAlign: "center",
+        color: "#fff",
+        position: "fixed",
+        bottom: "20px",
+        left: "30px",
+        borderRadius: "10px",
+        animation: "fadein 0.5s",
+      }}
+    >
+      <strong>
+      Score Card
+       {message.message}
+      </strong>
+    </div>
+  ) : null;
+};
