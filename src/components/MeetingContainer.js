@@ -16,7 +16,7 @@ export const MeetingContainer = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
+        height: "100%",
         backgroundColor:
           messages.length > 0
             ? messages.at(messages.length - 1).message
@@ -31,9 +31,8 @@ export const MeetingContainer = () => {
         style={{
           display: "grid",
           flex: 1,
-          maxHeight: `100vh`,
+          maxHeight: `100%`,
           overflowY: "auto",
-          gap: "20px",
           padding: "20px",
           alignItems: "center",
           justifyItems: "center",
