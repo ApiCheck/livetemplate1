@@ -24,6 +24,7 @@ export const MeetingContainer = () => {
       }}
     >
       <ParticipantsAudioPlayer />
+      <div> <h3>Score card  123</h3></div>
       <div
         className={`grid-container ${
           remoteSpeakers?.length > 1 ? "more-participant" : "single-participant"
