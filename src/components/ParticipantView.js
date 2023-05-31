@@ -60,6 +60,7 @@ export const ParticipantView = (props) => {
           }}
         >
           {String(displayName).charAt(0).toUpperCase()}
+          <h3> Score card Here 0</h3>
         </div>
       )}
       <div
@@ -77,9 +78,10 @@ export const ParticipantView = (props) => {
         }}
       >
         {displayName}{" "}
+        <h3> Score card Here 1</h3>
         {!micOn && <MicOffIcon fillcolor="#fff" height="18" width="18" />}
       </div>
-      <h3> Score card Here</h3>
+     
     </div>
   );
 };
