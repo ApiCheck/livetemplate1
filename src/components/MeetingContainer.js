@@ -23,9 +23,33 @@ export const MeetingContainer = () => {
             : "#fff",
       }}
     >
+      <h2>Live news</h2>
       <ParticipantsAudioPlayer />
-      <div> <h3>Score card  123</h3></div>
-     
+      <div
+        className={`grid-container ${
+          remoteSpeakers?.length > 1 ? "more-participant" : "single-participant"
+        }`}
+        style={{
+          display: "grid",
+          flex: 1,
+          maxHeight: `100vh`,
+          overflowY: "auto",
+          gap: "20px",
+          padding: "20px",
+          alignItems: "center",
+          justifyItems: "center",
+        }}
+      >
+        {[...remoteSpeakers].map((participant) => {
+          return (
+            <ParticipantView
+              key={participant.id}
+              participantId={participant.id}
+            />
+          );
+        })}
+      </div>
+  
     </div>
   ) : (
     <div
