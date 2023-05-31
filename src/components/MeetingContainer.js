@@ -16,7 +16,7 @@ export const MeetingContainer = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "500px",
+        height: "1000px",
         backgroundColor:
           messages.length > 0
             ? messages.at(messages.length - 1).message
