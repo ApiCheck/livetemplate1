@@ -23,7 +23,6 @@ export const MeetingContainer = () => {
             : "#fff",
       }}
     >
-      <h2>Live news</h2>
       <ParticipantsAudioPlayer />
       <div
         className={`grid-container ${
@@ -49,7 +48,7 @@ export const MeetingContainer = () => {
           );
         })}
       </div>
-  
+      <Notification />
     </div>
   ) : (
     <div

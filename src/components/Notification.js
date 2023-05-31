@@ -2,15 +2,15 @@ import { usePubSub } from "@videosdk.live/react-sdk";
 import { useEffect, useRef, useState } from "react";
 
 export const Notification = () => {
-
+  const timeoutRef = useRef(null);
   const handleChatMessage = (msg) => {
-    // if (timeoutRef.current) {
-    //   clearTimeout(timeoutRef.current);
-    // }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
     setMessage(msg);
-    // timeoutRef.current = setTimeout(() => {
-    //   setMessage(null);
-    // }, 3200);
+    timeoutRef.current = setTimeout(() => {
+      setMessage(null);
+    }, 3200);
   };
   const [message, setMessage] = useState(null);
   const { publish } = usePubSub("VIEWER_MESSAGE", {
@@ -18,9 +18,9 @@ export const Notification = () => {
   });
   useEffect(() => {
     return () => {
-      // if (timeoutRef.current) {
-      //   clearTimeout(timeoutRef.current);
-      // }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
   return message ? (
@@ -30,16 +30,15 @@ export const Notification = () => {
         padding: "10px",
         textAlign: "center",
         color: "#fff",
-        position: "fixed",
-        bottom: "20px",
+        position: "absolute",
+        bottom: "50px",
         left: "30px",
         borderRadius: "10px",
         animation: "fadein 0.5s",
       }}
     >
       <strong>
-      Score Card
-       {message.message}
+        {message.senderName} says {message.message}
       </strong>
     </div>
   ) : null;

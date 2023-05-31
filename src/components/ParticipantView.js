@@ -79,6 +79,7 @@ export const ParticipantView = (props) => {
         {displayName}{" "}
         {!micOn && <MicOffIcon fillcolor="#fff" height="18" width="18" />}
       </div>
+      <h3> Score card Here</h3>
     </div>
   );
 };
