@@ -21,7 +21,7 @@ export const ParticipantView = (props) => {
       className="participant-view"
       style={{
         width: "100%",
-        height: "1000px",
+        height: "100vh",
         display: "flex",
         flex: 1,
         alignItems: "center",
