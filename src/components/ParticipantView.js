@@ -69,7 +69,7 @@ export const ParticipantView = (props) => {
             height:"50px"
           }}
         >
-          <h3> Score card Here {message ? message.message: ''}</h3>
+          <h3> Score card Here0 {message ? message.message: ''}</h3>
         </div>
       )}
       <div
@@ -86,8 +86,8 @@ export const ParticipantView = (props) => {
           display: "flex",
         }}
       >
-        {displayName}{" "}
-        <h3> Score card Here 1</h3>
+        
+        <h3> Score card Here {message ? message.message: ''}</h3>
         {!micOn && <MicOffIcon fillcolor="#fff" height="18" width="18" />}
       </div>
      
