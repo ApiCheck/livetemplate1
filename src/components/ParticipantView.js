@@ -69,7 +69,7 @@ export const ParticipantView = (props) => {
             height:"50px"
           }}
         >
-          <h3> Score card Here {message.message}</h3>
+          <h3> Score card Here {message ? message.message: ''}</h3>
         </div>
       )}
       <div
