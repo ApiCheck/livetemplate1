@@ -1,7 +1,8 @@
 import { useParticipant } from "@videosdk.live/react-sdk";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import ReactPlayer from "react-player";
 import MicOffIcon from "../icons/MicOffIcon";
+import { usePubSub } from "@videosdk.live/react-sdk";
 
 export const ParticipantView = (props) => {
   const { webcamStream, webcamOn, displayName, micOn } = useParticipant(
