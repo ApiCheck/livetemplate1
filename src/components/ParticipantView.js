@@ -7,6 +7,13 @@ export const ParticipantView = (props) => {
   const { webcamStream, webcamOn, displayName, micOn } = useParticipant(
     props.participantId
   );
+  const [message, setMessage] = useState(null);
+    const handleChatMessage = (msg) => {
+      setMessage(msg);
+    };
+    const { publish } = usePubSub("VIEWER_MESSAGE", {
+      onMessageReceived: handleChatMessage,
+    });
 
   const videoStream = useMemo(() => {
     if (webcamOn && webcamStream) {
@@ -56,10 +63,13 @@ export const ParticipantView = (props) => {
           style={{
             fontSize: "50px",
             color: "#fff",
+            border: "1px solid #ccc",
+            backgroundColor: "blue",
+            height:"50px"
           }}
         >
           {String(displayName).charAt(0).toUpperCase()}
-          <h3> Score card Here 0</h3>
+          <h3> Score card Here {message.message}</h3>
         </div>
       )}
       <div
