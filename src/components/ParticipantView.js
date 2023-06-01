@@ -68,7 +68,6 @@ export const ParticipantView = (props) => {
             height:"50px"
           }}
         >
-          {String(displayName).charAt(0).toUpperCase()}
           <h3> Score card Here {message.message}</h3>
         </div>
       )}
