@@ -10,7 +10,7 @@ export const ParticipantView = (props) => {
   );
   const [message, setMessage] = useState(null);
     const handleChatMessage = (msg) => {
-      setMessage(msg);
+      setMessage(JSON.parse(msg));
     };
     const { publish } = usePubSub("VIEWER_MESSAGE", {
       onMessageReceived: handleChatMessage,
@@ -86,8 +86,28 @@ export const ParticipantView = (props) => {
           display: "flex",
         }}
       >
-        
-        <h3> Score card Here {message ? message.message: ''}</h3>
+        {message &&
+           <table style={{ borderCollapse: 'collapse' }}>
+           <thead>
+             <tr>
+               <th style={{ border: '1px solid black', padding: '4px' }}>Team</th>
+               {message.message[0].sets.map((set, index) => (
+                 <th style={{ border: '1px solid black', padding: '4px' }} key={index}>Set {index + 1}</th>
+               ))}
+             </tr>
+           </thead>
+           <tbody>
+             {message.message.map((team, index) => (
+               <tr key={index}>
+                 <td style={{ border: '1px solid black', padding: '4px' }}>{team.name}</td>
+                 {team.sets.map((set, setIndex) => (
+                   <td style={{ border: '1px solid black', padding: '4px' }} key={setIndex}>{Object.values(set)[0]}</td>
+                 ))}
+               </tr>
+             ))}
+           </tbody>
+         </table>
+        }
         {!micOn && <MicOffIcon fillcolor="#fff" height="18" width="18" />}
       </div>
      
