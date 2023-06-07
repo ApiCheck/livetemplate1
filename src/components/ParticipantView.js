@@ -88,7 +88,7 @@ export const ParticipantView = (props) => {
       >
         <h3>Here</h3>
         <pre>{message? message.message: 'no data'}</pre>
-        {/* {message &&
+        {message &&
            <table style={{ borderCollapse: 'collapse' }}>
            <thead>
              <tr>
@@ -109,7 +109,7 @@ export const ParticipantView = (props) => {
              ))}
            </tbody>
          </table>
-        } */}
+        }
         {!micOn && <MicOffIcon fillcolor="#fff" height="18" width="18" />}
       </div>
      
