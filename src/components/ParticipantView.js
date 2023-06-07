@@ -93,13 +93,13 @@ export const ParticipantView = (props) => {
            <thead>
              <tr>
                <th style={{ border: '1px solid black', padding: '4px' }}>Team</th>
-               {message.message[0].sets.map((set, index) => (
+               {JSON.parse(message.message)[0].sets.map((set, index) => (
                  <th style={{ border: '1px solid black', padding: '4px' }} key={index}>Set {index + 1}</th>
                ))}
              </tr>
            </thead>
            <tbody>
-             {message.message.map((team, index) => (
+             {JSON.parse(message.message).map((team, index) => (
                <tr key={index}>
                  <td style={{ border: '1px solid black', padding: '4px' }}>{team.name}</td>
                  {team.sets.map((set, setIndex) => (
