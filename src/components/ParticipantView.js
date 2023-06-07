@@ -10,7 +10,7 @@ export const ParticipantView = (props) => {
   );
   const [message, setMessage] = useState(null);
     const handleChatMessage = (msg) => {
-      setMessage(JSON.parse(msg));
+      setMessage(msg);
     };
     const { publish } = usePubSub("VIEWER_MESSAGE", {
       onMessageReceived: handleChatMessage,
@@ -87,7 +87,7 @@ export const ParticipantView = (props) => {
         }}
       >
         <h3>Here</h3>
-        <pre>{JSON.stringify(message, null, 2)}</pre>
+        <pre>{message}</pre>
         {message &&
            <table style={{ borderCollapse: 'collapse' }}>
            <thead>
