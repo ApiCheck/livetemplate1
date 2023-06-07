@@ -84,6 +84,7 @@ export const ParticipantView = (props) => {
           alignItems: "center",
           justifyItems: "center",
           display: "flex",
+          fontSize:"18px"
         }}
       >
         <h3>Here</h3>
@@ -101,7 +102,7 @@ export const ParticipantView = (props) => {
            <tbody>
              {JSON.parse(message.message).map((team, index) => (
                <tr key={index}>
-                 <td style={{ border: '1px solid black', padding: '4px' }}>{team.name}</td>
+                 <td style={{ border: '1px solid black', padding: '4px' }}><b>{team.name}</b></td>
                  {team.sets.map((set, setIndex) => (
                    <td style={{ border: '1px solid black', padding: '4px' }} key={setIndex}>{Object.values(set)[0]}</td>
                  ))}
