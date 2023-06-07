@@ -87,8 +87,6 @@ export const ParticipantView = (props) => {
           fontSize:"18px"
         }}
       >
-        <h3>Here</h3>
-        <pre>{message? message.message: 'no data'}</pre>
         {message &&
            <table style={{ borderCollapse: 'collapse' }}>
            <thead>
