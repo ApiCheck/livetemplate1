@@ -77,14 +77,14 @@ export const ParticipantView = (props) => {
           position: "absolute",
           left: "10px",
           bottom: "10px",
-          backgroundColor: "#050A0E",
-          color: "#fff",
+          backgroundColor: "#ffffff",
+          color: "#000",
           padding: "4px",
           borderRadius: "4px",
           alignItems: "center",
           justifyItems: "center",
           display: "flex",
-          fontSize:"18px"
+          fontSize:"24px"
         }}
       >
         {message &&
