@@ -87,7 +87,7 @@ export const ParticipantView = (props) => {
         }}
       >
         <h3>Here</h3>
-        <pre>{message? message.message:''}</pre>
+        <pre>{JSON.stringify(message, null, 2)}</pre>
         {message &&
            <table style={{ borderCollapse: 'collapse' }}>
            <thead>
