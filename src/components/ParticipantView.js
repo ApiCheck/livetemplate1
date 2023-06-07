@@ -69,7 +69,7 @@ export const ParticipantView = (props) => {
             height:"50px"
           }}
         >
-          <h3> Score card Here0 {message ? message.message: ''}</h3>
+          <h3> Score card Here1 {message ? message.message: ''}</h3>
         </div>
       )}
       <div
@@ -86,6 +86,7 @@ export const ParticipantView = (props) => {
           display: "flex",
         }}
       >
+        <pre>{message? message.message:''}</pre>
         {message &&
            <table style={{ borderCollapse: 'collapse' }}>
            <thead>
