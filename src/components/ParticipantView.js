@@ -5,9 +5,10 @@ import MicOffIcon from "../icons/MicOffIcon";
 import { usePubSub } from "@videosdk.live/react-sdk";
 
 export const ParticipantView = (props) => {
-  const { webcamStream, webcamOn, displayName, micOn } = useParticipant(
+  const { webcamStream, webcamOn, displayName, micOn, setQuality} = useParticipant(
     props.participantId
   );
+  setQuality('high')
   const [message, setMessage] = useState(null);
     const handleChatMessage = (msg) => {
       setMessage(msg);
